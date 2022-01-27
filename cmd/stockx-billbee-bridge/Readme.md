@@ -15,6 +15,16 @@
 * The stockx.csv file has to be named `stockx.csv`
 * Please read the billbee docs!
 
+### Setup Billbee
+* go to https://app.billbee.io/app_v2/settings/shops -> "new" -> "Manueller Shop" at the bottom of the list
+* Eigenschaften: -> name your shop
+* Umsatzsteuer: -> set Umsatzsteuer to "innergemeinschaftliche Leistung (Nettopreise)
+* Layouts und Nummernkreise: set "Layout Rechnung" to "StockX"
+* (to create StockX Layout, go to https://app.billbee.io/app_v2/settings -> Auftragsdokumente. Create a new Layout for your invoices. Go to "Fussbereich", put "Das Versanddatum entspricht dem Lieferdatum steuerfreie innergemeinschaftliche Lieferung" into Fußbereich Spalte 1.)
+* That's it for the basics. If you want to add some spice, feel free to do whatever you want.
+* If you save your shop & reopen it, your SHOP_ID-json-orderimport@inbound.billbee.de E-Mail Address should appear.
+
+
 ### Docs
 https://hilfe.billbee.io/article/392-json-e-mail-bestellimport
 
