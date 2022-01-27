@@ -2,7 +2,8 @@
 
 ## Application Download:
 Here you can find the already compiled application with docs and settings ready to download:
-`https://github.com/bogdanfinn/stockx-billbee-bridge/dist/stockx-billbee-bridge-1.0.0.zip`
+
+https://github.com/bogdanfinn/stockx-billbee-bridge/raw/master/dist/stockx-billbee-bridge-1.0.0.zip
 
 ## Docs
 Docs: https://hilfe.billbee.io/article/392-json-e-mail-bestellimport
