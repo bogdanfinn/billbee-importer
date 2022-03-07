@@ -12,8 +12,11 @@ import (
 )
 
 func main() {
+	ex, _ := os.Executable()
+	stockxCsvFilePath := filepath.Join(filepath.Dir(ex), "stockx.csv")
+
 	app := MinifiedApp()
-	app.Add("stockx-billbee-bridge", stockx_billbee_bridge.New("./stockx.csv"))
+	app.Add("stockx-billbee-bridge", stockx_billbee_bridge.New(stockxCsvFilePath))
 	app.Run()
 }
 

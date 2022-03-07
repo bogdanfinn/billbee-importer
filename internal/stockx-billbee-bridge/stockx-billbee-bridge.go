@@ -16,9 +16,9 @@ import (
 type StockxBillbeeBridge struct {
 	kernel.ForegroundModule
 	logger                   mon.Logger
-	httpClient               http.Client
-	fileName                 string
-	billbeeEmailEndpoint     string
+	httpClient           http.Client
+	filePath             string
+	billbeeEmailEndpoint string
 	billbeeEmailDelaySeconds int
 	stockxOrderStatusId      int
 	vatRate                  int
@@ -31,9 +31,9 @@ type StockxBillbeeBridge struct {
 	stockxSales              []StockxSale
 }
 
-func New(fileName string) *StockxBillbeeBridge {
+func New(filePath string) *StockxBillbeeBridge {
 	return &StockxBillbeeBridge{
-		fileName: fileName,
+		filePath: filePath,
 	}
 }
 
@@ -61,7 +61,7 @@ func (e *StockxBillbeeBridge) Boot(config cfg.Config, logger mon.Logger) error {
 		return fmt.Errorf("billbee email endpoint is missing")
 	}
 
-	stockxSales, err := ParseCsvToStruct(e.fileName)
+	stockxSales, err := ParseCsvToStruct(e.filePath)
 
 	if err != nil {
 		println("Error occurred while parsing stockx.csv file. Please check it")
@@ -79,8 +79,8 @@ func (e *StockxBillbeeBridge) Boot(config cfg.Config, logger mon.Logger) error {
 	return nil
 }
 
-func ParseCsvToStruct(fileName string) ([]StockxSale, error) {
-	salesFile, err := os.Open(fileName)
+func ParseCsvToStruct(filePath string) ([]StockxSale, error) {
+	salesFile, err := os.Open(filePath)
 	if err != nil {
 		return nil, err
 	}
@@ -126,7 +126,7 @@ func (e *StockxBillbeeBridge) Run(ctx context.Context) error {
 func (e *StockxBillbeeBridge) Start() error {
 	println("Stockx Billbee Bridge provided by CaptainBarnius#0001")
 	println(fmt.Sprintf("Start sending %d stockx sales to billbee with a delay of %d seconds after each email to %s", len(e.stockxSales), e.billbeeEmailDelaySeconds, e.billbeeEmailEndpoint))
-	println("You have now 60 seconds to abort the import by terminating this application.")
+	println(fmt.Sprintf("You have now %d seconds to abort the import by terminating this application.", e.waitBeforeImportSeconds))
 
 	time.Sleep(time.Duration(e.waitBeforeImportSeconds) * time.Second)
 
