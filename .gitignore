@@ -1,5 +1,5 @@
-stockx-billbee-bridge-release
-stockx-billbee-bridge
-Stockx_Billbee_Bridge
+Billbee_Importer
 .idea
 *.log
+config.dev.yml
+Billbee_Impoter

@@ -1,0 +1,1 @@
+Site,OrderID,Amount,ItemNameWithSize,InvoiceDate,DeliveryDate,Currency,TrackingNumber,IsThisAnInvoiceWithCurrencyExchange,ConvertedCurrencySign,ExchangeRatePorcentage,FinalAmountExchanged,StorePrice,ProcessingFee,ShippingFee,TransactionFee,BulkShipDiscount,TaxExemptNotice,TotalAmountNet,VAT,TotalVATIncluded
