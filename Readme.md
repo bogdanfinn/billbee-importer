@@ -12,7 +12,7 @@ See https://hilfe.billbee.io/article/392-json-e-mail-bestellimport#import
 ## Application Download:
 Here you can find the already compiled application with docs and settings ready to download:
 
-https://github.com/bogdanfinn/billbee-importer/raw/master/dist/billbee-importer-1.0.1.zip
+https://github.com/bogdanfinn/billbee-importer/raw/master/dist/billbee-importer-1.0.2.zip
 ## Docs
 Docs: https://hilfe.billbee.io/article/392-json-e-mail-bestellimport
 
